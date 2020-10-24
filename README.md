@@ -1,1 +1,1 @@
-# CSCI_4961_Project
+# CSCI4961Project
