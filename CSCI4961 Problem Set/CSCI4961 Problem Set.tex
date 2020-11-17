@@ -105,7 +105,7 @@ $$\text{Untargeted: }x_0' = x \implies x_{N+1}' = Clip_{x,\epsilon}\{x_N' + \alp
 $$\text{Targeted: }x_0' = x \implies x_{N+1}' = Clip_{x,\epsilon}\{x_N' + \alpha.sign(\nabla_xl(x_n', y_{target})\} $$
 \begin{itemize}
     \item Benefit: more successful
-    \item Drawbacks: more expensive (computationally)
+    \item Drawbacks: more expensive (computationaly)
 \end{itemize}
 \end{enumerate}
 
@@ -122,9 +122,9 @@ Using the starter code from \path{adv_problemset_starter.ipynb}, complete the fo
     \textbf{HINTS:}
     \begin{itemize}
         \item Use the loss object \texttt{keras.losses.CategoricalCrossentropy()} to calculate the loss for each iteration. Make sure to indicate that the loss is being calculated from the logits. See \url{https://www.tensorflow.org/api_docs/python/tf/keras/losses/CategoricalCrossentropy} for more details.
-        \item Consider converting the inputs to \texttt{tensor}s to take advantage of certain built-in functions. Just do not forget to convert back to \texttt{nparray}s on output!
+        \item Consider converting the inputs to \texttt{tensor}s to take advantage of certain built-in functions (e.g. tf.GradientTape()). Just do not forget to convert back to \texttt{nparray}s on output!
     \end{itemize}
-    \item Run the adversarial attack function on the test data with different values of epsilon to determine an appropriate value.
+    \item Run the adversarial attack function on the training data with different values of epsilon to determine an appropriate value.
     \begin{itemize}
         \item Evaluate the model on these attack images against the true labels and output the base accuracy. 
         \item Use the model to predict the outputs of the adversarial images.
@@ -143,7 +143,7 @@ Using the starter code from \path{adv_problemset_starter.ipynb}, complete the fo
         \item Use the same loss object \texttt{keras.losses.CategoricalCrossentropy()} to calculate the loss for each iteration. 
         \item You should not have to change too much from the single-step algorithm!
     \end{itemize}
-    \item Run the adversarial attack function on the test data with different values of epsilon, a, and T to determine an appropriate value.
+    \item Run the adversarial attack function on the training data with different values of epsilon, a, and T to determine an appropriate value.
     \begin{itemize}
         \item Evaluate the model on these attack images against the true labels and output the base accuracy. 
         \item Use the model to predict the outputs of the adversarial images.
